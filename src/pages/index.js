@@ -1,21 +1,17 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-const query = graphql`
-    query {
-        allWpPage {
-            totalCount
-            edges {
-                node {
-                    content
-                }
-            }
-        }
-    }
-`;
 
-const index = () => {
+
+const index = ({data}) => {
+    console.log(data);
     return <div>index</div>;
 };
+
+// export const query = graphql`
+// query {
+    
+// }
+// `
 
 export default index;

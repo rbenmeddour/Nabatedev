@@ -8,7 +8,7 @@ module.exports = {
     },
     plugins: [
         {
-            resolve: "gatsby-source-wordpress",
+            resolve: "gatsby-source-wordpress", 
             options: {
                 url: "http://nabate.local/graphql",
             },
