@@ -1,16 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-export const query = graphql`
-  query($id: String!) {
-    wpPage(id: { eq: $id }) {
-      title
-      content
-    }
-  }
-`
 
-const PageTemplate = ({ data }) => {
+
+
+const Page = ({ data }) => {
+
   const { title, content } = data.wpPage
 
   return (
@@ -21,4 +16,4 @@ const PageTemplate = ({ data }) => {
   )
 }
 
-export default PageTemplate
+export default Page

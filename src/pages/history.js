@@ -12,7 +12,7 @@ export const query = graphql`
 `;
 
 const History= ({ data }) => {
-    console.log(data);
+    // console.log(data);
     // const { title, content } = data.wpPage;
     // console.log(content);
     // // Divise le contenu en un tableau de paragraphes
