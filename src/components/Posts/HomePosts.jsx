@@ -25,7 +25,7 @@ const HomePosts = () => {
   const filteredPosts = queryPosts.allWpPost.edges.filter((edge) =>
     edge.node.categories.nodes.some((node) => node.id === "dGVybTo0Ng==")
   );
-  console.log(filteredPosts);
+
   return (
     <>
       {filteredPosts.map((post, index) => {
