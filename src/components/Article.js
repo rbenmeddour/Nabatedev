@@ -2,9 +2,8 @@ import React from "react";
 import Image from "./Image";
 import { graphql, useStaticQuery } from "gatsby";
 import parse from "html-react-parser";
+import { StaticImage } from "gatsby-plugin-image"; 
 import { getImage } from "gatsby-plugin-image";
-
-
 
 const Article = () => {
   const data = useStaticQuery(graphql`
@@ -19,7 +18,6 @@ const Article = () => {
                 gatsbyImageData(
                   placeholder: BLURRED
                   transformOptions: { cropFocus: CENTER }
-                  
                 )
               }
             }
@@ -29,61 +27,38 @@ const Article = () => {
     }
   `);
 
-  const { title, content, featuredImage } = data.wpPage;
+  const { featuredImage } = data.wpPage;
+//   console.log(featuredImage);
 
   const parsedContent = parse(data.wpPage.content);
-  //   console.log(parsedContent);
-  //   console.log(featuredImage);
+    // console.log(parsedContent);
+//   console.log(featuredImage.node.localFile.childImageSharp.gatsbyImageData);
 
   const replaceImages = (content) => {
-    return content.map((node, index) => {
-        console.log(node);
-      if (
-        node.type === "figure" &&
-        node.props.children &&
-        node.props.children.type === "img"
-      ) {
-        const imgNode = node.props.children;
-        console.log(imgNode.props.src, 'test');
-        // return imgNode
-        const src = imgNode.props.src;
-        const alt = imgNode.props.alt || "";
-        // const imageData = getImage(src);
-        if (alt.includes("landing_articl")) {
-        //     // console.log("test===================");
-          return (
-            <Image
-              key={`image-${index}`}
-          
-              src={src}
-              alt={alt}
-              width={300}
-              height={300}
-            />
-          );
-        } else {
-            return (
-                <Image
-                  key={`image-${index}`}
-                  image={imgNode}
-                  src={src}
-                  alt={alt}
-                  width={600}
-                  height={600}
-                />
-              );
+    let wpPressImg =
+      featuredImage.node.localFile.childImageSharp.gatsbyImageData;
+    // console.log(wpPressImg);
 
-        }
-      }
-      return node;
-    });
+
+    const image = {
+      src: wpPressImg.images.fallback.srcSet,
+      hight: wpPressImg.height,
+      width: wpPressImg.width,
+      alt: ''
+    };
+    console.log(image);
+
+    return image;
   };
 
+
   const replacedImagesContent = replaceImages(parsedContent);
+//   console.log(replacedImagesContent);
 
   return (
     <div>
-      <article>{replacedImagesContent}</article>
+      {/* <article>{replacedImagesContent}</article> */}
+      <Image image={replacedImagesContent} src={replacedImagesContent.src} hight={replacedImagesContent.hight} width={replacedImagesContent.width} alt={replacedImagesContent.alt}/>
     </div>
   );
 };
