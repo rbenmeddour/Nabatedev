@@ -17,9 +17,9 @@ const Article = () => {
             localFile {
               childImageSharp {
                 gatsbyImageData(
-
                   placeholder: BLURRED
                   transformOptions: { cropFocus: CENTER }
+                  
                 )
               }
             }
@@ -44,23 +44,35 @@ const Article = () => {
         node.props.children.type === "img"
       ) {
         const imgNode = node.props.children;
+        console.log(imgNode.props.src, 'test');
+        // return imgNode
         const src = imgNode.props.src;
         const alt = imgNode.props.alt || "";
-        const width = imgNode.props.width;
-        const height = imgNode.props.height;
-        const imageData = getImage(src);
-        // console.log(alt);
-        console.log(width);
-        if (alt.includes("landing_article")) {
+        // const imageData = getImage(src);
+        if (alt.includes("landing_articl")) {
+        //     // console.log("test===================");
           return (
             <Image
               key={`image-${index}`}
-              image={imageData}
+          
+              src={src}
               alt={alt}
-              width={width}
-              height={height}
+              width={300}
+              height={300}
             />
           );
+        } else {
+            return (
+                <Image
+                  key={`image-${index}`}
+                  image={imgNode}
+                  src={src}
+                  alt={alt}
+                  width={600}
+                  height={600}
+                />
+              );
+
         }
       }
       return node;
