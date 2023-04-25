@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import parse from "html-react-parser";
 
 const Hero = () => {
+
   const data = useStaticQuery(graphql`
     query {
       wpPage(id: { eq: "cG9zdDoyOA==" }) {
@@ -22,6 +23,7 @@ const Hero = () => {
     }
   `);
   const { title, content, featuredImage } = data.wpPage;
+
 
   const parsedContent = parse(data.wpPage.content);
   // console.log(parsedContent);
