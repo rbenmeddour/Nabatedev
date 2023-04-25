@@ -25,7 +25,8 @@ const Hero = () => {
   const { title, content, featuredImage } = data.wpPage;
   return (
     <div>       
-      <h1 className="container mx-auto">{title}</h1>
+      <h1 className="font-bold text-center text-gray-800">{title}</h1>
+
       {featuredImage && (
         <img
           src={featuredImage.node.localFile.childImageSharp.gatsbyImageData.images.fallback.src}
