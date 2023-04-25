@@ -1,64 +1,61 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "./Image";
 import { graphql, useStaticQuery } from "gatsby";
 import parse from "html-react-parser";
-import { StaticImage } from "gatsby-plugin-image"; 
-import { getImage } from "gatsby-plugin-image";
 
 const Article = () => {
+  const [replacedImages, setReplacedImages] = useState([]);
+
   const data = useStaticQuery(graphql`
     query {
       wpPage(id: { eq: "cG9zdDoyOA==" }) {
         id
         content
-        featuredImage {
-          node {
-            localFile {
-              childImageSharp {
-                gatsbyImageData(
-                  placeholder: BLURRED
-                  transformOptions: { cropFocus: CENTER }
-                )
-              }
-            }
-          }
-        }
       }
     }
   `);
 
-  const { featuredImage } = data.wpPage;
-//   console.log(featuredImage);
-
-  const parsedContent = parse(data.wpPage.content);
-    // console.log(parsedContent);
-//   console.log(featuredImage.node.localFile.childImageSharp.gatsbyImageData);
+  const parsedContent = data;
 
   const replaceImages = (content) => {
-    let wpPressImg =
-      featuredImage.node.localFile.childImageSharp.gatsbyImageData;
-    // console.log(wpPressImg);
-
-
-    const image = {
-      src: wpPressImg.images.fallback.srcSet,
-      hight: wpPressImg.height,
-      width: wpPressImg.width,
-      alt: ''
-    };
-    console.log(image);
-
-    return image;
+    const allContentFromThePage = parse(content.wpPage.content);
+    const figures = allContentFromThePage.filter((node) => node.type === "figure");
+    const replacedImages = [];
+  
+    figures.forEach((image) => {
+      const childrenNode = image.props.children;
+      const childImages = [];
+      childrenNode.forEach((node) => {
+        const childNode = node.props.children;
+        if (childNode) {
+          if (Array.isArray(childNode)) {
+            childNode.forEach((el) => {
+              const src = el.props["data-src"];
+              childImages.push(<img key={src} src={src} alt='' />);
+            });
+          }
+        }
+      });
+      replacedImages.push(...childImages);
+    });
+  
+    return replacedImages;
   };
+  
+  console.log(replacedImages);
+  useEffect(() => {
+    setReplacedImages(replaceImages(parsedContent));
+  }, [parsedContent]);
 
-
-  const replacedImagesContent = replaceImages(parsedContent);
-//   console.log(replacedImagesContent);
+  console.log(replacedImages);
 
   return (
     <div>
-      {/* <article>{replacedImagesContent}</article> */}
-      <Image image={replacedImagesContent} src={replacedImagesContent.src} hight={replacedImagesContent.hight} width={replacedImagesContent.width} alt={replacedImagesContent.alt}/>
+      {replacedImages.length ? (
+        <article>{replacedImages}</article>
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   );
 };

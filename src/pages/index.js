@@ -2,6 +2,7 @@ import React from "react";
 // import { graphql, useStaticQuery } from "gatsby";
 import Hero from "../components/Hero";
 import Main from "../components/Main";
+import Header from "../components/Header"
 
 const Index = () => {
 //   const data = useStaticQuery(graphql`
@@ -26,7 +27,8 @@ const Index = () => {
 //   const { title, content, featuredImage } = data.wpPage;
 
   return (
-    <div>       
+    <div>  
+      <Header />     
     <Hero/>
     <Main />
       {/* <h1>{title}</h1>
