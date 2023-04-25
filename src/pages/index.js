@@ -1,6 +1,7 @@
 import React from "react";
 // import { graphql, useStaticQuery } from "gatsby";
 import Hero from "../components/Hero";
+import Main from "../components/Main";
 
 const Index = () => {
 //   const data = useStaticQuery(graphql`
@@ -27,6 +28,7 @@ const Index = () => {
   return (
     <div>       
     <Hero/>
+    <Main />
       {/* <h1>{title}</h1>
       <div dangerouslySetInnerHTML={{ __html: content }} />
       {featuredImage && (
