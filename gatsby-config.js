@@ -30,6 +30,12 @@ module.exports = {
             },
           },
         {
+            resolve: `gatsby-plugin-postcss`,
+            options: {
+              postCssPlugins: [require(`tailwindcss`)],
+            },
+          },
+        {
             resolve: "gatsby-source-wordpress", 
             options: {
                 url: "http://yaseenb1.sg-host.com/graphql",
