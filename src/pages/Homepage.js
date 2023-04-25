@@ -1,21 +1,28 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, useStaticQuery } from 'gatsby';
+import parse from "html-react-parser";
+import Nav from "../components/NavBar";
+import Hero from "../components/Hero";
 
-export const query = graphql`
-    query HomepageQuery {
+const Homepage = () => {
+    const query = useStaticQuery(graphql`
+        query {
         wpPage(id: { eq: "cG9zdDoyOA==" }) {
-            title
-            uri
+        id
+        title
+        content
         }
-    }
-`;
-
-const Homepage = ({ data }) => {
-    console.log(data);
+    }`)
+    const parsedContent = parse(query.wpPage.content);
+    console.log(parsedContent);
+    const srcValue = parsedContent[7]
+    console.log(srcValue);
+    // const headline = parsedContent[1].props.children;
     return (
         <div>
-            <h1>{data.wpPage.title}</h1>
-        </div>
+        <Nav /> 
+        {/* <Hero title={query.wpPage.title} img={srcValue} headline={headline}/> */}
+      </div>
     );
 };
 
