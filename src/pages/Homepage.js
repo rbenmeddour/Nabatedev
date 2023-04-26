@@ -4,7 +4,7 @@ import parse from "html-react-parser";
 import Nav from "../components/NavBar";
 import Hero from "../components/Hero";
 import HomePosts from "../components/Posts/HomePosts";
-import ProductPosts from "../components/Posts/ProductPosts";
+
 
 const Homepage = () => {
     const query = useStaticQuery(graphql`
@@ -28,7 +28,6 @@ const Homepage = () => {
         <Nav /> 
         <Hero title={query.wpPage.title} img={srcValue} headline={headline}/>
         <HomePosts />
-        <ProductPosts />
       </div>
     );
 };

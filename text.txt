@@ -1,0 +1,73 @@
+import React, { useState } from "react";
+
+const ContactContainer = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
+  };
+
+  return (
+    <div className="bg-gray-200 h-screen flex justify-center items-center">
+      <div className="max-w-md">
+        <h2 className="text-center text-3xl font-bold py-10">
+          We're here for you, don't hesitate
+        </h2>
+        <div className="flex flex-col justify-center items-center">
+          <div className="flex flex-row w-full">
+            <div className="bg-white shadow-md rounded-lg p-8 w-9/12 mr-6 text-center">
+              {/*...*/}
+            </div>
+            <div className="bg-white shadow-md rounded-lg p-8 w-9/12 text-center">
+              {/*...*/}
+              <br />
+              <button
+                className="bg-gray-300 border border-gray-400 text-gray-700 py-2 px-4 rounded-full hover:bg-gray-400 w-full"
+                onClick={togglePopup}
+              >
+                SEND
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {showPopup ? (
+        <div className="fixed top-0 left-0 h-screen w-full flex items-center justify-center">
+          <div className="absolute bg-gray-100 opacity-95 h-screen w-full"></div>
+          <div className="bg-white rounded-lg shadow-lg w-11/12 md:max-w-md mx-auto overflow-y-auto">
+            <div className="py-4 text-left px-6">
+              <div className="flex justify-between items-center pb-3">
+                <p className="text-2xl font-bold">Contact form</p>
+                <button
+                  className="focus:outline-none p-2"
+                  onClick={togglePopup}
+                >
+                  <svg
+                    className="h-6 w-6 text-black"
+                    x-show="open"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <form className="space-y-4">
+                {/*...*/}
+              </form>
+            </div>
+          </div>
+        </div>
+      ) : null}
+    </div>
+  );
+};
+
+export default ContactContainer;
