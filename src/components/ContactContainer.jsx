@@ -6,11 +6,22 @@ import { StaticImage } from "gatsby-plugin-image";
 
 const ContactContainer = () => {
   const [showPopup, setShowPopup] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
   const togglePopup = () => {
     setShowPopup(!showPopup);
     console.log(showPopup);
   };
+
+  const handleSubmit =  (e)  => {
+    e.preventDefault()
+    try {
+        console.log(formData);
+
+    } catch (e) {
+        console.log(e);
+    }
+  }
 
   return (
     <div className="bg-gray-200 h-screen flex justify-center items-center">
@@ -80,7 +91,9 @@ const ContactContainer = () => {
               <div className="flex justify-between items-center pb-3">
                 <p className="text-2xl font-bold">Contact form</p>
               </div>
-              <form className="space-y-4">
+              <form 
+              onSubmit={handleSubmit}
+              className="space-y-4">
                 <div className="flex flex-col">
                   <label htmlFor="name" className="pb-1 text-sm font-bold">
                     Name
@@ -88,6 +101,10 @@ const ContactContainer = () => {
                   <input
                     type="text"
                     name="name"
+                    value={formData.name}
+                    onChange={(event) =>
+                        setFormData({ ...formData, name: event.target.value })
+                      }
                     id="name"
                     className="border-2 border-gray-300 p-2 rounded-lg"
                   />
@@ -99,6 +116,10 @@ const ContactContainer = () => {
                   <input
                     type="email"
                     name="email"
+                    value={formData.email}
+                    onChange={(event) =>
+                        setFormData({ ...formData, email: event.target.value })
+                      }
                     id="email"
                     className="border-2 border-gray-300 p-2 rounded-lg"
                   />
@@ -109,6 +130,10 @@ const ContactContainer = () => {
                   </label>
                   <textarea
                     name="message"
+                    value={formData.message}
+                    onChange={(event) =>
+                        setFormData({ ...formData, message: event.target.value })
+                      }
                     id="message"
                     className="border-2 border-gray-300 p-2 rounded-lg"
                     rows="5"
