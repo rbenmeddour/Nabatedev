@@ -1,17 +1,21 @@
 import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
-import parse from "html-react-parser";
 
-const Hero = ({title,img}) => {
+const Hero = ({ title, img, headline }) => {
   return (
-    <>
-        <img
-          className="w-screen h-banner"
-          src={img}
-          alt="Featured Image"
-        />
-        <h1>{title}</h1>
-    </>
+    <div className="flex items-center justify-center"
+      style={{
+        backgroundImage: `url(${img})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        height: "800px"
+      }}
+    >
+      <div className="flex-col">
+        <h1 className="text-white text-5xl m-10">{title}</h1>
+        <p className="text-white text-5xl">{headline}</p>
+      </div>
+    </div>
   );
 };
 
