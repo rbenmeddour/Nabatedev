@@ -8,7 +8,13 @@ module.exports = {
     },
     plugins: [
         {
-            resolve: "gatsby-source-wordpress",
+            resolve: `gatsby-plugin-postcss`,
+            options: {
+              postCssPlugins: [require(`tailwindcss`)],
+            },
+          },
+        {
+            resolve: "gatsby-source-wordpress", 
             options: {
                 url: "http://nabate.local/graphql",
             },
@@ -17,7 +23,6 @@ module.exports = {
         "gatsby-plugin-sharp",
         "gatsby-plugin-netlify",
         "gatsby-transformer-sharp",
-        "gatsby-plugin-google-gtag",
         {
             resolve: "gatsby-source-filesystem",
             options: {

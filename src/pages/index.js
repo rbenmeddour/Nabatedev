@@ -1,21 +1,10 @@
 import React from "react";
-import { graphql } from "gatsby";
+import Homepage from "./Homepage";
 
-const query = graphql`
-    query {
-        allWpPage {
-            totalCount
-            edges {
-                node {
-                    content
-                }
-            }
-        }
-    }
-`;
-
-const index = () => {
-    return <div>index</div>;
+const Index = () => {
+  return (
+    <Homepage />
+  );
 };
 
-export default index;
+export default Index;
