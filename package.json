@@ -20,7 +20,6 @@
     "cheerio": "^1.0.0-rc.12",
     "gatsby": "^5.8.0",
     "gatsby-image": "^3.11.0",
-    "gatsby-plugin-google-gtag": "^5.8.0",
     "gatsby-plugin-image": "^3.8.0",
     "gatsby-plugin-netlify": "^5.1.0",
     "gatsby-plugin-sharp": "^5.9.0",
