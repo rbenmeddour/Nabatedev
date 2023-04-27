@@ -21,7 +21,7 @@ function NavBar(){
         <div className="flex justify-between items-center py-4 px-6 text-white">
             <Link to='/'><img src={logo} alt="nabate logo" style={{ height: 80, width: 80 }} /></Link>
             <ul className="flex space-x-6 text-lg font-medium">
-                {data.allWpPage.edges.reverse().map(({ node }) => (
+                {data.allWpPage.edges.map(({ node }) => (
                     node.title != "Bienvenue à Nabate" &&
                     <Link className="nav-title" key={node.title} to={`/${node.title.toLowerCase()}`}>
                     {node.title}
