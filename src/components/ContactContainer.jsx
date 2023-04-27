@@ -3,25 +3,26 @@ import { useState } from "react";
 import logoPhone from "../../public/_gatsby/_image/Images/call.png";
 import logoMail from "../../public/_gatsby/_image/Images/folder.png";
 import { StaticImage } from "gatsby-plugin-image";
+import Modal from "./Modal";
 
 const ContactContainer = () => {
   const [showPopup, setShowPopup] = useState(false);
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+//   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
   const togglePopup = () => {
     setShowPopup(!showPopup);
-    console.log(showPopup);
+    // console.log(showPopup);
   };
 
-  const handleSubmit =  (e)  => {
-    e.preventDefault()
-    try {
-        console.log(formData);
+//   const handleSubmit =  (e)  => {
+//     e.preventDefault()
+//     try {
+//         console.log(formData);
 
-    } catch (e) {
-        console.log(e);
-    }
-  }
+//     } catch (e) {
+//         console.log(e);
+//     }
+//   }
 
   return (
     <div className="bg-gray-200 h-screen flex justify-center items-center">
@@ -70,83 +71,7 @@ const ContactContainer = () => {
           </div>
         </div>
       </div>
-      {showPopup ? (
-        <div className="fixed top-0 left-0 h-screen w-full flex items-center justify-center z-50">
-          <div className="absolute bg-gray-800 opacity-75 h-screen w-full z-10"></div>
-          <div className="bg-white rounded-lg shadow-lg w-3/4 md:max-w-md mx-auto overflow-y-auto z-20 relative">
-            <button
-              className="absolute top-0 right-0 mt-4 mr-4"
-              onClick={togglePopup}
-            >
-              <svg
-                className="h-6 w-6 fill-current text-gray-700"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <path d="M19.41 7.41L12 14.83l-7.41-7.42L3 9.83l9 9 9-9z" />
-              </svg>
-            </button>
-
-            <div className="py-4 text-left px-6">
-              <div className="flex justify-between items-center pb-3">
-                <p className="text-2xl font-bold">Contact form</p>
-              </div>
-              <form 
-              onSubmit={handleSubmit}
-              className="space-y-4">
-                <div className="flex flex-col">
-                  <label htmlFor="name" className="pb-1 text-sm font-bold">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={(event) =>
-                        setFormData({ ...formData, name: event.target.value })
-                      }
-                    id="name"
-                    className="border-2 border-gray-300 p-2 rounded-lg"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <label htmlFor="email" className="pb-1 text-sm font-bold">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={(event) =>
-                        setFormData({ ...formData, email: event.target.value })
-                      }
-                    id="email"
-                    className="border-2 border-gray-300 p-2 rounded-lg"
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <label htmlFor="message" className="pb-1 text-sm font-bold">
-                    Message
-                  </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={(event) =>
-                        setFormData({ ...formData, message: event.target.value })
-                      }
-                    id="message"
-                    className="border-2 border-gray-300 p-2 rounded-lg"
-                    rows="5"
-                  ></textarea>
-                </div>
-                <button className="bg-gray-300 border border-gray-400 text-gray-700 py-2 px-4 rounded-full hover:bg-gray-400 w-full">
-                  SEND
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      ) : null}
+      {showPopup && <Modal showPopup={showPopup} />}
     </div>
   );
 };
