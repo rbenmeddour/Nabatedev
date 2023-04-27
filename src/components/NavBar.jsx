@@ -19,7 +19,7 @@ function NavBar(){
     return(
         <nav className="absolute w-full" style={{zIndex:2,}}>
         <div className="flex justify-between items-center py-4 px-6 text-white">
-            <img src={logo} alt="nabate logo" style={{ height: 80, width: 80 }} />
+            <Link to='/'><img src={logo} alt="nabate logo" style={{ height: 80, width: 80 }} /></Link>
             <ul className="flex space-x-6 text-lg font-medium">
                 {data.allWpPage.edges.reverse().map(({ node }) => (
                     node.title != "Bienvenue à Nabate" &&
