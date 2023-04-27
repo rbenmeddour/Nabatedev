@@ -1,4 +1,17 @@
-/* src/styles/global.css */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+/* src/styles/global.css /
+
+  / Utiliser la police pour tous les éléments */
+  @import 'tailwindcss/base';
+  @import 'tailwindcss/components';
+  @import 'tailwindcss/utilities';
+
+  html, body {
+    font-family: 'Gotu', sans-serif;
+    font-weight: lighter;
+  }
+  @font-face {
+    font-family: 'Gotu';
+    src: url('./Gotu.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }

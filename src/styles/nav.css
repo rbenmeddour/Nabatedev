@@ -1,6 +1,6 @@
 .nav-title:hover {
-    letter-spacing: 0.1em;
+    letter-spacing: 0.3em;
     text-decoration: "none";
-    color: gray;
+    
     cursor: pointer;
 }

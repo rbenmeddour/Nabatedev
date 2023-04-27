@@ -1,0 +1,6 @@
+.article-image {
+    height: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    box-shadow: 20px 20px 0px 0px #303E27;
+  }
