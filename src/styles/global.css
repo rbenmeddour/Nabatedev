@@ -1,4 +1,18 @@
 /* src/styles/global.css */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@font-face {
+    font-family: 'Gotu';
+    src: url('./the-rivers-regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @import 'tailwindcss/base';
+  @import 'tailwindcss/components';
+  @import 'tailwindcss/utilities';
+  
+  /* Utiliser la police pour tous les éléments */
+  html, body {
+    font-family: 'Gotu', sans-serif;
+    font-weight: lighter;
+  }
+  

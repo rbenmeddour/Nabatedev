@@ -4,7 +4,6 @@ import parse from "html-react-parser";
 import Nav from "../components/NavBar";
 import Hero from "../components/Hero";
 import HomePosts from "../components/Posts/HomePosts";
-import ProductPosts from "../components/Posts/ProductPosts";
 
 const Homepage = () => {
     const query = useStaticQuery(graphql`
@@ -15,20 +14,21 @@ const Homepage = () => {
         content
         }
     }`)
+
     const parsedContent = parse(query.wpPage.content);
-    const srcValue = parsedContent[3].props.children.props.src
+    let srcValue;
+    if(parsedContent[3].props.children.props?.src){
+      srcValue = parsedContent[3].props.children.props?.src;
+    }else{
+      srcValue = parsedContent[3].props.children[0].props.children[2].props['data-src'];
+    }
     const headline = parsedContent[1].props.children;
-
-    // JE VEUX RECUPERER MES POSTS
-
-
 
     return (
         <div>
         <Nav /> 
         <Hero title={query.wpPage.title} img={srcValue} headline={headline}/>
         <HomePosts />
-        <ProductPosts />
       </div>
     );
 };

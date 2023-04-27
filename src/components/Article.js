@@ -1,14 +1,15 @@
 import React from "react";
+import "../styles/article.css";
 
-
-const Article = ({image,paragraph,title}) => {
+const Article = ({ image, paragraph, title, reverse }) => {
+  const reverseClass = reverse ? '' : 'justify-between flex-row-reverse';
   return (
-    <div className="flex bg-lime-100 p-8 space-x-5 m-4">
-        <img src={image} alt="Image" style={{ height: 320, width: 340 }} />
-        <div className="flex flex-col justify-center">
-            <h2 className="text-45 font-bold">{title}</h2>
-            <p className="text-25">{paragraph}</p>
-        </div>
+    <div className={`flex ${reverseClass} space-x-20 p-8 mx-20 my-10`} data-aos="fade-right" style={{ backgroundColor: "#E7EAA8" }}>
+      <img src={image} alt="Image" className="article-image" />
+      <div className="ml-2 flex flex-col">
+        <h2 className="text-3xl font-bold m-6">{title}</h2>
+        <p className="text-2xl font-thin leading-8 ml-6" style={{ maxWidth: 900 }}>{paragraph}</p>
+      </div>
     </div>
   );
 };

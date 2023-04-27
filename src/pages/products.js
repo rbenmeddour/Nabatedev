@@ -16,8 +16,13 @@ const Products = () => {
     }`)
 
     const parsedContent = parse(query.wpPage.content);   
-    const srcValue = parsedContent[1].props.children.props.src
-
+    console.log(parsedContent)
+    let srcValue;
+    if(parsedContent[1].props.children.props?.src){
+      srcValue = parsedContent[1].props.children.props?.src;
+    }else{
+      srcValue = parsedContent[1].props.children[0].props.children[2].props['data-src'];
+    }
  
   return (
     <div>
