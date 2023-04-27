@@ -23,7 +23,7 @@ function NavBar(){
             <ul className="flex space-x-6 text-lg font-medium">
                 {data.allWpPage.edges.map(({ node }) => (
                     node.title != "Bienvenue à Nabate" &&
-                    <Link className="nav-title" key={node.title} to={`/${node.title.toLowerCase()}`}>
+                    <Link className="nav-title" key={node.title} to={`/${node.title}`}>
                     {node.title}
                     </Link>
                 ))}

@@ -1,7 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import logoPhone from "../../public/_gatsby/_image/Images/call.png";
-import logoMail from "../../public/_gatsby/_image/Images/folder.png";
 import { StaticImage } from "gatsby-plugin-image";
 
 const ContactContainer = () => {

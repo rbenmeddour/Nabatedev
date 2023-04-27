@@ -20,7 +20,7 @@ const Hero = ({ title, img, headline }) => {
         <div className="flex-col flex items-center">
           <h1 className="text-white text-5xl m-10">{title}</h1>
           <p className="text-white text-4xl" style={{maxWidth:800}}>{headline}</p>
-          <img src={scroll} className="cursor-pointer mx-auto absolute bottom-10 animate-bounce"/>
+          <img src={scroll} alt='Nabate' className="cursor-pointer mx-auto absolute bottom-10 animate-bounce"/>
         </div>
       </div>
   );

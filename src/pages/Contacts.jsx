@@ -6,7 +6,7 @@ import Hero from "../components/Hero";
 import ContactContainer from '../components/ContactContainer';
 
 
-const Contact = () => {
+const Contacts = () => {
     const query = useStaticQuery(graphql`
     query {
     wpPage(id: { eq: "cG9zdDoxOQ==" }) {
@@ -19,7 +19,6 @@ const Contact = () => {
 const parsedContent = parse(query.wpPage.content); 
 console.log(parsedContent);
 const srcValue = parsedContent[1].props.children.props.src
-// const headline = parsedContent[1].props.children;
 
   return (
     <> 
@@ -30,4 +29,4 @@ const srcValue = parsedContent[1].props.children.props.src
   )
 } 
 
-export default Contact
+export default Contacts;
