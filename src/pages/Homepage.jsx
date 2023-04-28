@@ -16,7 +16,7 @@ const Homepage = () => {
         }
     }`)
     const parsedContent = parse(query.wpPage.content);
-    // console.log(parsedContent);
+    console.log(parsedContent);
     const srcValue = parsedContent[3].props.children.props.src
     const headline = parsedContent[1].props.children;
 

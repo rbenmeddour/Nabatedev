@@ -3,6 +3,7 @@ import scroll from "../../public/_gatsby/_image/Images/scroll.png";
 
 const Hero = ({ title, img, headline }) => {
   return (
+    
       <div className="flex items-center justify-center relative"
         style={{
           backgroundImage: `linear-gradient(

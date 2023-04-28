@@ -1,12 +1,29 @@
-import React from 'react'
-import Form from './Form'
-import {useState} from 'react'
+import React from "react";
+import Form from "./Form";
+import FormExterne from "./FormExterne";
+import { useState } from "react";
 
-const Modal = ({showPopup, togglePopup}) => {
+const Modal = ({ showPopup, togglePopup }) => {
+    const [showSuccessToast, setShowSuccessToast] = useState(false);
+
+  const handleFormSubmit = async (formData) => {
+    // code to send email
+    try {
+      // send email with emailjs
+      setShowSuccessToast(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleSuccessToastClose = () => {
+    setShowSuccessToast(false);
+    togglePopup(); // close modal after success toast is closed
+  };
 
   return (
     <>
-          {showPopup ? (
+      {showPopup &&
         <div className="fixed top-0 left-0 h-screen w-full flex items-center justify-center z-50">
           <div className="absolute bg-gray-800 opacity-75 h-screen w-full z-10"></div>
           <div className="bg-white rounded-lg shadow-lg w-3/4 md:max-w-md mx-auto overflow-y-auto z-20 relative">
@@ -27,13 +44,14 @@ const Modal = ({showPopup, togglePopup}) => {
               <div className="flex justify-between items-center pb-3">
                 <p className="text-2xl font-bold">Contact form</p>
               </div>
-              <Form />
+              <Form togglePopup={togglePopup}/>
+              {/* <FormExterne /> */}
             </div>
           </div>
         </div>
-      ) : null}
+        }
     </>
-  )
-}
+  );
+};
 
-export default Modal
+export default Modal;

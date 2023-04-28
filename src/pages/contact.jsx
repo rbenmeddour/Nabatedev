@@ -18,7 +18,13 @@ const Contact = () => {
 
 const parsedContent = parse(query.wpPage.content); 
 console.log(parsedContent);
-const srcValue = parsedContent[1].props.children.props.src
+let srcValue;
+    if(parsedContent[1].props.children.props?.src){
+      srcValue = parsedContent[1].props.children.props?.src;
+    }else{
+      srcValue = parsedContent[1].props.children[0].props.children[2].props['data-src'];
+    }
+// const srcValue = parsedContent[1].props.children.props.src
 // const headline = parsedContent[1].props.children;
 
   return (
