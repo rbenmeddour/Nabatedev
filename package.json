@@ -15,6 +15,14 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "@emailjs/browser": "^3.11.0",
+    "aos": "^2.3.4",
+    "apollo": "^2.34.0",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.0.3",
+>>>>>>> jad
     "gatsby": "^5.8.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-image": "^3.8.0",
@@ -26,7 +34,8 @@
     "html-react-parser": "^3.0.16",
     "js-base64": "^3.7.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-toastify": "^9.1.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
