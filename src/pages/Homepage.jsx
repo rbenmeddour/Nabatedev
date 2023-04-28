@@ -17,13 +17,14 @@ const Homepage = () => {
     }`)
 
     const parsedContent = parse(query.wpPage.content);
+    console.log(parsedContent);
     let srcValue;
-    if(parsedContent[3].props.children.props?.src){
-      srcValue = parsedContent[3].props.children.props?.src;
+    if(parsedContent[1].props.children.props?.src){
+      srcValue = parsedContent[1].props.children.props?.src;
     }else{
-      srcValue = parsedContent[3].props.children[0].props.children[2].props['data-src'];
+      srcValue = parsedContent[1].props.children[0].props.children[2].props['data-src'];
     }
-    const headline = parsedContent[1].props.children;
+    const headline = parsedContent[3].props.children;
 
     return (
         <div>
