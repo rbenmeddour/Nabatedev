@@ -1,13 +1,13 @@
 import React from 'react'
-import logo from "../../public//images/logo.png"
-import { graphql, useStaticQuery } from "gatsby";
+// import logo from "../../public//images/logo.png"
+// import { graphql, useStaticQuery } from "gatsby";
 // import '../styles/footer.css';
 
 
 const Footer = () => {
     return (
       <footer className="bg-lime-100">
-        <div  className="max-w-7xl h-52 mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+        {/* <div  className="max-w-7xl h-52 mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <img className="h-36" src={logo} alt="Logo"/>
   
           <ul className="flexflex-col space-x-6 leading-8 text-left">
@@ -55,7 +55,7 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-        </div>
+        </div> */}
       </footer>
     )
   }
