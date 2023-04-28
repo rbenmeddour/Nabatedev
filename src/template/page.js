@@ -10,7 +10,11 @@ export const query = graphql`
   }
 `
 
+<<<<<<< HEAD
 const Page = ({ data }) => {
+=======
+const PageTemplate = ({ data }) => {
+>>>>>>> 950ef2c (createpages dynamicly works)
   const { title, content } = data.wpPage
 
   return (
@@ -21,4 +25,8 @@ const Page = ({ data }) => {
   )
 }
 
+<<<<<<< HEAD
 export default Page
+=======
+export default PageTemplate
+>>>>>>> 950ef2c (createpages dynamicly works)
