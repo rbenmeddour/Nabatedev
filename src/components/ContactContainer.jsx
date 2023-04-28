@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+<<<<<<< HEAD
 import logoPhone from "../../public/_gatsby/_image/Images/call.png";
 import logoMail from "../../public/_gatsby/_image/Images/folder.png";
 import { StaticImage } from "gatsby-plugin-image";
@@ -23,6 +24,18 @@ const ContactContainer = () => {
     }
   }
 
+=======
+import { StaticImage } from "gatsby-plugin-image";
+import Modal from "./Modal";
+
+const ContactContainer = () => {
+  const [showPopup, setShowPopup] = useState(false);
+ 
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
+  };
+
+>>>>>>> jad
   return (
     <div className="bg-gray-200 h-screen flex justify-center items-center">
       <div className="max-w-md">
@@ -70,6 +83,7 @@ const ContactContainer = () => {
           </div>
         </div>
       </div>
+<<<<<<< HEAD
       {showPopup ? (
         <div className="fixed top-0 left-0 h-screen w-full flex items-center justify-center z-50">
           <div className="absolute bg-gray-800 opacity-75 h-screen w-full z-10"></div>
@@ -147,6 +161,9 @@ const ContactContainer = () => {
           </div>
         </div>
       ) : null}
+=======
+      {showPopup && <Modal showPopup={showPopup} setShowPopup={setShowPopup} />}
+>>>>>>> jad
     </div>
   );
 };
