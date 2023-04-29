@@ -1,19 +1,17 @@
-import React from 'react'
-import Form from './Form'
-import {useState} from 'react'
+import React from "react";
+import Form from "./Form";
+import { useState } from "react";
 
-const Modal = ({showPopup, setShowPopup}) => {
+const Modal = ({ showPopup, setShowPopup }) => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const [isSubmitted, setIsSubmitted] = useState(false);
-
-    const closeModal = () => {
-        setShowPopup(false);
-      };
-      
+  const closeModal = () => {
+    setShowPopup(false);
+  };
 
   return (
     <>
-        {showPopup ? (
+      {showPopup ? (
         <div className="fixed top-0 left-0 h-screen w-full flex items-center justify-center z-50">
           <div
             className="absolute bg-gray-800 opacity-75 h-screen w-full z-10"
@@ -42,14 +40,17 @@ const Modal = ({showPopup, setShowPopup}) => {
               {isSubmitted ? (
                 <div>Votre formulaire a été soumis avec succès!</div>
               ) : (
-                <Form isSubmitted={isSubmitted} setIsSubmitted={setIsSubmitted}/>
+                <Form
+                  isSubmitted={isSubmitted}
+                  setIsSubmitted={setIsSubmitted}
+                />
               )}
             </div>
           </div>
         </div>
       ) : null}
     </>
-  )
-}
+  );
+};
 
-export default Modal
+export default Modal;

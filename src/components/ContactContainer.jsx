@@ -30,7 +30,7 @@ import Modal from "./Modal";
 
 const ContactContainer = () => {
   const [showPopup, setShowPopup] = useState(false);
- 
+
   const togglePopup = () => {
     setShowPopup(!showPopup);
   };

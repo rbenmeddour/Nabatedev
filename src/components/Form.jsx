@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -20,19 +20,16 @@ const Form = ({ togglePopup }) => {
     const publicKey = process.env.GATSBY_PUBLICKEY;
 
     try {
-        
       const result = await emailjs.sendForm(
         `${serviceID}`,
         `${templateID}`,
         form.current,
         `${publicKey}`
       );
-    
+
       if (result.status === 200) {
         toast.success("Message sent successfully!");
-    }
-
-
+      }
     } catch (e) {
       console.log(e);
     }
