@@ -19,7 +19,7 @@ const Article = ({ image, paragraph, title, reverse }) => {
           {paragraph}
         </p>
       </div>
-    </div>
+    </div> 
   );
 };
 
