@@ -32,7 +32,7 @@ module.exports = {
         {
             resolve: "gatsby-source-wordpress", 
             options: {
-                url: "http://nabate.local/graphql",
+                url: "http://yaseenb1.sg-host.com/graphql",
             },
         },
         "gatsby-plugin-image",
