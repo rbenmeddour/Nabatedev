@@ -16,12 +16,22 @@ const Modal = ({ showPopup, setShowPopup }) => {
           <div
             className="absolute bg-gray-800 opacity-75 h-screen w-full z-10"
             onClick={() => setShowPopup(false)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                setShowPopup(false);
+              }
+            }}
           ></div>
 
           <div className="bg-white rounded-lg shadow-lg w-3/4 md:max-w-md mx-auto overflow-y-auto z-20 relative">
             <button
               className="absolute top-0 right-0 mt-4 mr-4"
               onClick={closeModal}
+              onKeyUp={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  setShowPopup(false);
+                }
+              }}
             >
               <svg
                 className="h-6 w-6 fill-current text-gray-700"

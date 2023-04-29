@@ -25,7 +25,7 @@ function NavBar() {
         <ul className="flex space-x-6 text-lg font-medium">
           {data.allWpPage.edges.map(
             ({ node }) =>
-              node.title != "Bienvenue à Nabate" && (
+              node.title !== "Bienvenue à Nabate" && (
                 <Link
                   className="nav-title"
                   key={node.title}
