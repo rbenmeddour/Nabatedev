@@ -15,6 +15,7 @@ const Modal = ({ showPopup, setShowPopup }) => {
         <div className="fixed top-0 left-0 h-screen w-full flex items-center justify-center z-50">
           <div
             className="absolute bg-gray-800 opacity-75 h-screen w-full z-10"
+            role="presentation"
             onClick={() => setShowPopup(false)}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
