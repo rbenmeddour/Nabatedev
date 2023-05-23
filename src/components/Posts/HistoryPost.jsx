@@ -41,14 +41,18 @@ const HistoryPost = () => {
         }
         const postTitle = post.node.title;
         return (
-            <div className="flex justify-around">
-            <p className="max-w-4xl text-4xl leading-[5rem]">{postParagraph}</p>
-            <section>
+          <section className="history">
+            <div className="historyContainer">
+            <article className="textContainer">
+            <p className="text">{postParagraph}</p>
+            </article>
+            <article className="images">
             <div className="case" style={{ backgroundImage: `url(${postImg})`, backgroundAttachment: 'fixed', backgroundRepeat: 'no-repeat'}}></div>
             <div className="case" style={{ backgroundImage: `url(${postImg})`, backgroundAttachment: 'fixed', backgroundRepeat: 'no-repeat'}}></div>
             <div className="case" style={{ backgroundImage: `url(${postImg})`, backgroundAttachment: 'fixed', backgroundRepeat: 'no-repeat'}}></div>
-            </section>
+            </article>
             </div>
+          </section>
         );
       })}
     </>

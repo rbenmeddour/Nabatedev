@@ -1,0 +1,43 @@
+.contactContainer h2{
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 20px;
+}
+
+
+.cardContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+}
+.card {
+    text-align: center;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    padding: 5px;
+}
+.card button{
+width: 40%;
+}
+.paragraph {
+    width: 40%;
+}
+.staticImg {
+    width: 20%;
+}
+
+@media (max-width: 768px) {
+    .cardContainer {
+      flex-direction: column;
+      height: 100%;
+    }
+    .card {
+        margin: 40px;
+    }
+    
+  }

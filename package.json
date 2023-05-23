@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+    "@heroicons/react": "^2.0.18",
     "aos": "^2.3.4",
     "dotenv": "^16.0.3",
     "gatsby": "^5.8.0",

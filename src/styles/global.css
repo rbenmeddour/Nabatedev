@@ -1,7 +1,7 @@
 /* src/styles/global.css */
 @font-face {
     font-family: 'Gotu';
-    src: url('./the-rivers-regular.otf') format('truetype');
+    src: url('./static/OpenSans-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
@@ -14,5 +14,9 @@
   html, body {
     font-family: 'Gotu', sans-serif;
     font-weight: lighter;
+    letter-spacing: 1.5px;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
   }
   

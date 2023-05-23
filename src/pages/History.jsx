@@ -5,6 +5,7 @@ import Nav from "../components/NavBar";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import HistoryPost from "../components/Posts/HistoryPost";
+import '../styles/history.css'
 
 const History = () => {
   const query = useStaticQuery(graphql`

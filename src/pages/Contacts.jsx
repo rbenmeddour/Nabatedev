@@ -4,6 +4,7 @@ import parse from "html-react-parser";
 import Nav from "../components/NavBar";
 import Hero from "../components/Hero";
 import ContactContainer from "../components/ContactContainer";
+import Footer from "../components/Footer";
 
 const Contacts = () => {
   const query = useStaticQuery(graphql`
@@ -32,6 +33,7 @@ const Contacts = () => {
       <Nav />
       <Hero title={query.wpPage.title} img={srcValue} />
       <ContactContainer />
+      <Footer />
     </>
   );
 };

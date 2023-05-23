@@ -1,0 +1,11 @@
+@media (max-width: 768px) {
+    .footerParent {
+      display: flex;
+      flex-direction: column;
+      height: 500px;
+      
+    }
+    li {
+        text-align: center;
+    }
+  }

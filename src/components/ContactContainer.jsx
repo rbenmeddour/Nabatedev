@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import Modal from "./Modal";
+import '../styles/contact.css'
 
 const ContactContainer = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -11,19 +12,19 @@ const ContactContainer = () => {
   };
 
   return (
-    <div className="bg-gray-200 h-screen flex justify-center items-center">
-      <div className="max-w-md">
-        <h2 className="text-center text-3xl font-bold py-10">
+    <div className="bg-gray-200">
+      <div className="contactContainer">
+        <h2 className="">
           We're here for you, don't hesitate
         </h2>
-        <div className="flex flex-col justify-center items-center">
-          <div className="flex flex-row w-full">
-            <div className="bg-white shadow-md rounded-lg p-8 w-full mr-6 text-center">
+        <div className="">
+          <div className="cardContainer">
+            <div className="card">
               <StaticImage
                 src="../../public/_gatsby/_image/Images/call.png"
                 alt="Image 2"
                 placeholder="blurred"
-                className="mb-4"
+                className="staticImg"
               />
               <h3 className="text-lg font-bold mb-2">By Phone</h3>
               <p className="mb-4">Monday to Friday, 9am to 4pm PST</p>
@@ -34,15 +35,15 @@ const ContactContainer = () => {
               <p className="mb-2">International:</p>
               <p>1-877-930-7438</p>
             </div>
-            <div className="bg-white shadow-md rounded-lg p-8 w-full text-center">
+            <div className="card">
               <StaticImage
                 src="../../public/_gatsby/_image/Images/folder.png"
                 alt="Image 2"
                 placeholder="blurred"
-                className="mb-4"
+                className="staticImg"
               />
               <h3 className="text-lg font-bold mb-2">START A NEW CASE</h3>
-              <p>
+              <p className="paragraph">
                 Just send your question or concerns by starting a new case and
                 we will give you the help you need
               </p>
