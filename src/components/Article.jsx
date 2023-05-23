@@ -5,7 +5,7 @@ const Article = ({ image, paragraph, title, reverse }) => {
   const reverseClass = reverse ? "" : "justify-between flex-row-reverse";
   return (
     <div
-      className={`flex ${reverseClass}  p-6 mx-20 my-10 responsiveArticle`}
+      className={`flex ${reverseClass} responsiveArticle`}
       data-aos="fade-right"
       style={{ backgroundColor: "#E7EAA8" }}
     >

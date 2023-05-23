@@ -9,7 +9,7 @@ const Footer = () => {
       className="text-white p-10 mt-40"
       style={{ backgroundColor: "#303E27" }}
     >
-      <div className="footerParent max-w-7xl h-52 mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <div className="footerParent">
         <img className="footerImg" src={logo} alt="Logo" />
         <ul className="flex flex-col space-x-6 leading-8 text-left">
           <li>
