@@ -10,7 +10,7 @@ const Footer = () => {
       style={{ backgroundColor: "#303E27" }}
     >
       <div className="footerParent max-w-7xl h-52 mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-        <img className="h-36" src={logo} alt="Logo" />
+        <img className="footerImg" src={logo} alt="Logo" />
         <ul className="flex flex-col space-x-6 leading-8 text-left">
           <li>
             <Link to="/" className="pl-6 font-semibold">

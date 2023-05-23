@@ -34,7 +34,7 @@ const History = () => {
       <Nav />
       <Hero title={query.wpPage.title} img={srcValue} />
       <HistoryPost />
-      <Footer />
+      <Footer /> 
     </>
   );
 };

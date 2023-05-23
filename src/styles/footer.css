@@ -5,6 +5,10 @@
       height: 500px;
       
     }
+    .footerImg {
+      width: 50%;
+      margin-left: 20px;
+    }
     li {
         text-align: center;
     }
