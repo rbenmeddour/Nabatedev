@@ -55,6 +55,9 @@
     height: 150px;
     margin-bottom: 10px;
   }
+  .images {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
