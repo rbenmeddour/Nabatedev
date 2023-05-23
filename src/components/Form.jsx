@@ -22,7 +22,7 @@ const Form = ({ togglePopup }) => {
       );
 
       if (result.status === 200) {
-        toast.success("Message sent successfully!");
+        toast.success("Vôtre message a été envoyé, merci.");
       }
     } catch (e) {
       console.log(e);
@@ -39,13 +39,13 @@ const Form = ({ togglePopup }) => {
               htmlFor="name"
               className="block font-medium mb-2 text-center"
             >
-              Votre nom
+              Nom
             </label>
             <input
               id="name"
               type="text"
               name="user_name"
-              placeholder="Entrer votre nom"
+              placeholder="Nom"
               className="w-full px-3 py-2 border border-gray-300 rounded-md"
               required
             />
@@ -55,13 +55,13 @@ const Form = ({ togglePopup }) => {
               htmlFor="phone"
               className="block font-medium mb-2 text-center"
             >
-              Numéro de téléphone
+              Téléphone
             </label>
             <input
               id="phone"
               type="tel"
               name="user_phone"
-              placeholder="Enter your phone number"
+              placeholder="N° de téléphone"
               className="w-full px-3 py-2 border border-gray-300 rounded-md"
               required
             />
@@ -75,7 +75,7 @@ const Form = ({ togglePopup }) => {
             id="email"
             type="email"
             name="user_email"
-            placeholder="Enter your email"
+            placeholder="Adresse mail"
             className="w-full px-3 py-2 border border-gray-300 rounded-md"
             required
           />

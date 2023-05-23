@@ -73,9 +73,9 @@ const Modal = ({ showPopup, setShowPopup }) => {
     >
       <button 
         onClick={() => setShowPopup(false)} 
-        class="absolute top-4 right-4 bg-gray-300 rounded-full p-2"
+        class="absolute top-4 right-4 p-2 closedIcon"
       >
-        X {/* Replace this with your preferred close icon */}
+        X 
       </button>
       {isSubmitted ? (
         <div>Votre formulaire a été soumis avec succès!</div>
