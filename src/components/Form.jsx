@@ -1,9 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Form = ({ togglePopup }) => {
+const Form = ({ showPopup, setShowPopup }) => {
+
   const form = useRef();
 
   const sendEmail = async (e) => {
@@ -23,6 +24,7 @@ const Form = ({ togglePopup }) => {
 
       if (result.status === 200) {
         toast.success("Vôtre message a été envoyé, merci.");
+        setShowPopup(false);
       }
     } catch (e) {
       console.log(e);

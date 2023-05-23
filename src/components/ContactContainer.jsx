@@ -15,7 +15,7 @@ const ContactContainer = () => {
     <div className="bg-gray-200">
       <div className="contactContainer">
         <h2 className="">
-          We're here for you, don't hesitate
+          Vous souhaitez en savoir plus sur nos produits ?
         </h2>
         <div className="">
           <div className="cardContainer">
@@ -26,7 +26,7 @@ const ContactContainer = () => {
                 placeholder="blurred"
                 className="staticImg"
               />
-              <h3 className="text-lg font-bold mb-2">By Phone</h3>
+              <h3 className="text-lg font-bold mb-2">Par téléphone</h3>
               <p className="mb-4">Monday to Friday, 9am to 4pm PST</p>
               <h4 className="text-md font-bold mb-2">
                 North American Toll-Free:
@@ -52,7 +52,7 @@ const ContactContainer = () => {
                 onClick={togglePopup}
                 className="bg-gray-300 border border-gray-400 text-gray-700 py-2 px-4 rounded-full hover:bg-gray-400 w-full"
               >
-                SEND
+                Nous écrire
               </button>
             </div>
           </div>

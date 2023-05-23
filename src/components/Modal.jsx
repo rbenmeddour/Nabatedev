@@ -1,14 +1,21 @@
 import React from "react";
 import Form from "./Form";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 const Modal = ({ showPopup, setShowPopup }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const closeModal = () => {
-    setShowPopup(false);
-  };
+  // useEffect(() => {
+  //   if (isSubmitted) {
+  //     closeModal(); // Fermer la modal lorsque le formulaire est soumis
+  //   }
+  // }, [isSubmitted]);
+
+
+  // const closeModal = () => {
+  //   setShowPopup(false);
+  // };
 
   return (
     <>
@@ -77,11 +84,11 @@ const Modal = ({ showPopup, setShowPopup }) => {
       >
         X 
       </button>
-      {isSubmitted ? (
+{isSubmitted ? (
         <div>Votre formulaire a été soumis avec succès!</div>
-      ) : (
+      ) : ( 
         <Form isSubmitted={isSubmitted} setIsSubmitted={setIsSubmitted} />
-      )}
+       )} 
     </div>
   </section>
 ) : null}
