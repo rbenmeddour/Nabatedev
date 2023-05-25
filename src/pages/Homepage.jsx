@@ -18,7 +18,7 @@ const Homepage = () => {
   `);
 
   const parsedContent = parse(query.wpPage.content);
-
+  
   let srcValue;
   if (parsedContent[3].props.children.props?.src) {
     srcValue = parsedContent[3].props.children.props?.src;

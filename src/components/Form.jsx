@@ -3,9 +3,11 @@ import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Form = ({ showPopup, setShowPopup }) => {
+const Form = ({ isSubmitted, setIsSubmitted }) => {
 
   const form = useRef();
+
+  console.log(isSubmitted, "isSubmitted");
 
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -24,7 +26,7 @@ const Form = ({ showPopup, setShowPopup }) => {
 
       if (result.status === 200) {
         toast.success("Vôtre message a été envoyé, merci.");
-        setShowPopup(false);
+        setIsSubmitted(true);
       }
     } catch (e) {
       console.log(e);

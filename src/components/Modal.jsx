@@ -5,17 +5,18 @@ import { useState, useEffect } from "react";
 
 const Modal = ({ showPopup, setShowPopup }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+// console.log(isSubmitted);
 
-  // useEffect(() => {
-  //   if (isSubmitted) {
-  //     closeModal(); // Fermer la modal lorsque le formulaire est soumis
-  //   }
-  // }, [isSubmitted]);
+  useEffect(() => {
+    if (isSubmitted) {
+      closeModal(); // Fermer la modal lorsque le formulaire est soumis
+    }
+  }, [isSubmitted]);
 
 
-  // const closeModal = () => {
-  //   setShowPopup(false);
-  // };
+  const closeModal = () => {
+    setShowPopup(false);
+  };
 
   return (
     <>
